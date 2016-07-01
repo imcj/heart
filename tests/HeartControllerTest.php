@@ -23,7 +23,11 @@ class HeartControllerTest extends TestCase
 
     public function testNotHasExistsLike()
     {
-        $this->assertTrue(TRUE);
+        $this->json("POST", '/api/heart', ['url' => 'http://google.com/']);
+            // ->seeJson([
+            //     'url' => 'http://google.com/',
+            //     'description' => '1'
+            // ]);
     }
 
     public function testHasExistsLike()

@@ -19,6 +19,8 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 Route::resource('api/heart', '\\App\\Http\\Controllers\\Api\\HeartController');
+Route::resource('api/user', '\\App\\Http\\Controllers\\Api\\UserController');
+Route::resource('api/user/random', 'Api\\RandomUserController');
 
 Route::auth();
 

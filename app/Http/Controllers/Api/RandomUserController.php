@@ -4,12 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Heart\Dto\HeartDTO;
 
-class HeartController extends Controller
+use App\Heart\Facade\UserServiceFacade;
+
+class RandomUserController extends Controller
 {
+    protected $userServiceFacade;
+
+    public function __construct(UserServiceFacade $userServiceFacade)
+    {
+        $this->userServiceFacade = $userServiceFacade;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +47,9 @@ class HeartController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(new HeartDTO(1, 'http://google.com/', '', NULL));
+        $username = (string)rand();
+        $userDto = $this->userServiceFacade->newRandomUser();
+        return response()->json($userDto);
     }
 
     /**

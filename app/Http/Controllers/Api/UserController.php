@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Heart\Dto\HeartDTO;
 
-class HeartController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,7 +37,6 @@ class HeartController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(new HeartDTO(1, 'http://google.com/', '', NULL));
     }
 
     /**
