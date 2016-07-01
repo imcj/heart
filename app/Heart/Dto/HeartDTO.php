@@ -12,16 +12,16 @@ class HeartDTO
     public $description;
     public $createdAt;
     /**
-     * @var boolean $exists 保存Heart时如果对象已经在数据库中存在。
+     * @var boolean $isNew
      */
-    public $exists;
+    public $isNew;
 
-    public function __construct($id, $url, $description, $createdAt, $exists)
+    public function __construct($id, $url, $description, $createdAt, $isNew)
     {
         $this->id = $id;
         $this->url = $url;
         $this->description = $description;
         $this->createdAt = $createdAt;
-        $this->exists = $exists;
+        $this->isNew = $isNew;
     }
 }
